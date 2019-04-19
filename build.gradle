@@ -1,0 +1,44 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.0'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE"
+
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '1.5.2.RELEASE'
+    compile group: 'com.sun.jersey', name: 'jersey-json', version: '1.19.3'
+    compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.19.3'
+    compile group: 'com.alibaba',name:'fastjson',version:'1.2.28'
+    compile group: 'junit',name:'junit',version:'4.11'
+    compile group: 'commons-io',name:'commons-io',version:'2.4'
+    compile group: 'commons-lang',name:'commons-lang',version: '2.6'
+    compile group: 'org.jsoup',name:'jsoup',version:'1.10.2'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+    compile group:'javax.json', name:'javax.json-api',version:'1.1'
+    compile group: 'org.springframework.boot',name:'spring-boot-starter-data-jpa',version:'1.5.7.RELEASE'
+    compile group:'org.hibernate.javax.persistence',name:'hibernate-jpa-2.1-api',version:'1.0.0.Final'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.14'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.14'
+    compile group: 'gov.nist.math', name: 'jama', version: '1.0.3'
+}
