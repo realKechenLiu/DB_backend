@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.Path;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,84 @@ public class MyController {
 
     @Autowired
     private ProblemService problemService;
+
+
+    @RequestMapping(value = "/api/problem/delete/{id}/{description}/{title}/{difficulty}/{tag}")
+    @CrossOrigin
+    public int deleteProblem(@PathVariable int id,@PathVariable String description,@PathVariable String title,@PathVariable int difficulty,@PathVariable String tag){
+        Problem p = problemRepository.findByProblemId(id);
+        if(p==null) return 404;
+
+        List<Integer> list = new LinkedList<>();
+        for(Problem_Code pc:p.getPcodeSet()){
+            System.out.println(111111);
+            for(Note note:pc.getCode().getNoteSet()) {
+                noteRepository.delete(note);
+            }
+            System.out.println(pc.getCode().getCodeId());
+            list.add(new Integer(pc.getCode().getCodeId()));
+            pc.setCode(null);
+            pc.setProblem(null);
+            pc.setUser(null);
+//            pc.getCode().setPcCode(new HashSet<>());
+//            codeRepository.save(pc.getCode());
+//            codeRepository.delete(pc.getCode().getCodeId());
+        }
+//        p.setPcodeSet(new HashSet<>());
+//        problemRepository.save(p);
+        problemService.deleteProblemById(p.getProblemId());
+        for (int i:list)
+            codeRepository.delete(codeRepository.findByCodeId(i));
+        return 200;
+    }
+
+
+//    @RequestMapping(value = "/api/problem/insert/{id}/{description}/{title}/{difficulty}/{tag}")
+//    @CrossOrigin
+//    public int insertProblem(@PathVariable int id,@PathVariable String description,@PathVariable String title,@PathVariable int difficulty,@PathVariable String tag){
+//
+//        if(id == -1)
+//            return problemService.Insert(new Problem(description,title,difficulty,tag))?200:400;
+//        else
+//            return problemService.Insert(new Problem(id,description,title,difficulty,tag))?200:400;
+//    }
+
+    @RequestMapping(value = "/api/problem/insert",method = RequestMethod.POST)
+    @CrossOrigin
+    public int insertProblem(@RequestBody Map<String,Object>[] maps){
+        int problemId = (int) maps[0].get("problemId");
+        String description = (String) maps[0].get("description");
+        String title = (String) maps[0].get("title");
+        int difficulty = (int) maps[0].get("difficulty");
+        String tag = (String) maps[0].get("tag");
+        if(problemId == -1)
+            return problemService.Insert(new Problem(description,title,difficulty,tag))?200:400;
+        else
+            return problemService.Insert(new Problem(problemId,description,title,difficulty,tag))?200:400;
+    }
+
+//    @RequestMapping(value = "/api/user/signup/{userName}/{password}/{email}/{isAdmin}")
+//    @CrossOrigin
+//    public int signup(@PathVariable String userName, @PathVariable String password, @PathVariable String email, @PathVariable int isAdmin){
+//
+//        if(userService.register(userName,email,password,isAdmin))
+//            return 200;
+//        else
+//            return 400;
+//    }
+
+    @RequestMapping(value = "/api/user/signup",method = RequestMethod.POST)
+    @CrossOrigin
+    public int signup(@RequestBody Map<String,Object>[] maps){
+        String userName = (String) maps[0].get("userName");
+        String password = (String) maps[0].get("password");
+        String email = (String) maps[0].get("email");
+        int isAdmin = (int)maps[0].get("isAdmin");
+        if(userService.register(userName,email,password,isAdmin))
+            return 200;
+        else
+            return 400;
+    }
 
     @RequestMapping(value = "/api/problem/submission",method = RequestMethod.POST)
     @CrossOrigin
@@ -94,33 +173,33 @@ public class MyController {
         return new ResponseEntity<Iterable<ProblemCode>>(list, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/api/problem/{userId}/{problemId}")
-    @CrossOrigin
-    public ResponseEntity<Iterable<ProblemCode>> getOneProblemq(@PathVariable int userId, @PathVariable int problemId){
-
-        User user = userService.findById(userId);
-        ProblemCode pc = new ProblemCode();
-
-        for(Problem_Code p:user.getPcSet()){
-            System.out.println(p.getProblem().getId()+" "+problemId);
-            if(p.getProblem().getId() == problemId){
-                pc.problemId = p.getProblem().getProblemId();
-                pc.description = p.getProblem().getDescription();
-                pc.difficulty = p.getProblem().getDifficulty();
-                pc.tag = p.getProblem().getTag();
-                pc.title = p.getProblem().getTitle();
-                for(Problem_Code code:p.getProblem().getPcodeSet()){
-                    pc.codeList.add(code.getCode());
-                }
-                for(Problem_Company pcom:p.getProblem().getPcomSet()){
-                    pc.companyList.add(pcom.getCompany().getCompanyName());
-                }
-            }
-        }
-        List<ProblemCode> list = new LinkedList<>();
-        list.add(pc);
-        return new ResponseEntity<Iterable<ProblemCode>>(list, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/api/problem/{userId}/{problemId}")
+//    @CrossOrigin
+//    public ResponseEntity<Iterable<ProblemCode>> getOneProblemq(@PathVariable int userId, @PathVariable int problemId){
+//
+//        User user = userService.findById(userId);
+//        ProblemCode pc = new ProblemCode();
+//
+//        for(Problem_Code p:user.getPcSet()){
+//            System.out.println(p.getProblem().getId()+" "+problemId);
+//            if(p.getProblem().getId() == problemId){
+//                pc.problemId = p.getProblem().getProblemId();
+//                pc.description = p.getProblem().getDescription();
+//                pc.difficulty = p.getProblem().getDifficulty();
+//                pc.tag = p.getProblem().getTag();
+//                pc.title = p.getProblem().getTitle();
+//                for(Problem_Code code:p.getProblem().getPcodeSet()){
+//                    pc.codeList.add(code.getCode());
+//                }
+//                for(Problem_Company pcom:p.getProblem().getPcomSet()){
+//                    pc.companyList.add(pcom.getCompany().getCompanyName());
+//                }
+//            }
+//        }
+//        List<ProblemCode> list = new LinkedList<>();
+//        list.add(pc);
+//        return new ResponseEntity<Iterable<ProblemCode>>(list, HttpStatus.OK);
+//    }
 
     @RequestMapping(value = "/api/login",method = RequestMethod.POST)
     @CrossOrigin

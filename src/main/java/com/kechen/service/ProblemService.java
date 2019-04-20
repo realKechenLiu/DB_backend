@@ -46,7 +46,15 @@ public class ProblemService {
         return list;
     }
 
-//    public Problem Insert(){
-//
-//    }
+    public boolean Insert(Problem problem){
+        return problemRepository.save(problem)!=null;
+    }
+
+    public void deleteProblem(Problem problem){
+         problemRepository.delete(problem);
+    }
+
+    public void deleteProblemById(int id){
+        problemRepository.delete(id);
+    }
 }

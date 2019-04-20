@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CodeRepository extends CrudRepository<Code,Integer>{
+
+    public Code findByCodeId(int id);
 }

@@ -50,6 +50,13 @@ public class Problem {
         pcomSet = new HashSet<>();
     }
 
+    public Problem(int id,String description, String title, int difficulty, String tag) {
+        this(description,title,difficulty,tag);
+        this.problemId = id;
+    }
+
+
+
     public int getProblemId() {
         return problemId;
     }
