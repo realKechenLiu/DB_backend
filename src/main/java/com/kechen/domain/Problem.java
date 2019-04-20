@@ -20,6 +20,11 @@ public class Problem {
     private int difficulty;
     private String tag;
 
+
+    public int getId(){
+        return problemId;
+    }
+
     @JsonIgnore
     @OneToMany(mappedBy = "problem",cascade = CascadeType.ALL,fetch=FetchType.LAZY)
     private Set<User_Problem> upSet;
