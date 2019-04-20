@@ -59,12 +59,39 @@ public class MyController {
             pc.setCode(null);
             pc.setProblem(null);
             pc.setUser(null);
-//            pc.getCode().setPcCode(new HashSet<>());
-//            codeRepository.save(pc.getCode());
-//            codeRepository.delete(pc.getCode().getCodeId());
         }
-//        p.setPcodeSet(new HashSet<>());
-//        problemRepository.save(p);
+
+        problemService.deleteProblemById(p.getProblemId());
+        for (int i:list)
+            codeRepository.delete(codeRepository.findByCodeId(i));
+        return 200;
+    }
+
+
+    @RequestMapping(value = "/api/problem/delete",method = RequestMethod.POST)
+    @CrossOrigin
+    public int delete(@RequestBody Map<String,Object>[] maps){
+        int id = (int)maps[0].get("id");
+        String description = (String)maps[0].get("description");
+        String title = (String)maps[0].get("title");
+        int difficulty = (int)maps[0].get("difficulty");
+        String tag = (String)maps[0].get("tag");
+        Problem p = problemRepository.findByProblemId(id);
+        if(p==null) return 404;
+
+        List<Integer> list = new LinkedList<>();
+        for(Problem_Code pc:p.getPcodeSet()){
+            System.out.println(111111);
+            for(Note note:pc.getCode().getNoteSet()) {
+                noteRepository.delete(note);
+            }
+            System.out.println(pc.getCode().getCodeId());
+            list.add(new Integer(pc.getCode().getCodeId()));
+            pc.setCode(null);
+            pc.setProblem(null);
+            pc.setUser(null);
+        }
+
         problemService.deleteProblemById(p.getProblemId());
         for (int i:list)
             codeRepository.delete(codeRepository.findByCodeId(i));
