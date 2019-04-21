@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -40,11 +42,10 @@ public class MyController {
     private ProblemService problemService;
 
 
-    @RequestMapping(value = "/api/problem/delete/{id}/{description}/{title}/{difficulty}/{tag}")
+    @RequestMapping(value = "/api/problem/delete/{id}")
     @CrossOrigin
-    public int deleteProblem(@PathVariable int id,@PathVariable String description,@PathVariable String title,@PathVariable int difficulty,@PathVariable String tag){
+    public ResponseEntity<Iterable<Problem>> deleteProblem(@PathVariable int id){
         Problem p = problemRepository.findByProblemId(id);
-        if(p==null) return 404;
 
         List<Integer> list = new LinkedList<>();
         for(Problem_Code pc:p.getPcodeSet()){
@@ -62,7 +63,9 @@ public class MyController {
         problemService.deleteProblemById(p.getProblemId());
         for (int i:list)
             codeRepository.delete(codeRepository.findByCodeId(i));
-        return 200;
+
+        List<Problem> res = problemRepository.findAll();
+        return new ResponseEntity<Iterable<Problem>>(res,HttpStatus.OK);
     }
 
 
@@ -149,8 +152,16 @@ public class MyController {
     public int update(@RequestBody Map<String,Object> maps){
         int userId = (int)maps.get("user_id");
         int problemId = (int)maps.get("problem_id");
-        Code code = (Code)maps.get("code");
-        Note note = (Note)maps.get("note");
+
+//        Code code = (Code)(maps.get("code"));
+//        Note note = (Note)maps.get("note");
+
+        Map<String,Object> map1 = (Map<String, Object>) maps.get("code");
+        Map<String,Object> map2 = (Map<String, Object>) maps.get("note");
+        Code code = new Code((boolean)map1.get("isAccepted")==true?1:0,(double)map1.get("performance"),(String)map1.get("code_language"),Timestamp.valueOf((String)map1.get("time_created")),
+                (Timestamp.valueOf((String) map1.get("time_modified"))),(String)map1.get("content"));
+        Note note = new Note((String)map2.get("content"),Timestamp.valueOf((String)map2.get("time_created")),
+                (Timestamp.valueOf((String) map2.get("time_modified"))),code);
 
         codeRepository.save(code);
         noteRepository.save(note);
