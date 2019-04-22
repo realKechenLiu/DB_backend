@@ -156,10 +156,12 @@ public class MyController {
         String password = (String) maps.get("password");
         String email = (String) maps.get("email");
         int isAdmin = (int)maps.get("isAdmin");
-        if(userService.register(userName,email,password,isAdmin))
-            return "{\"status\":"+200+",\n\"admin\":"+false+",\n\"userName\":\""+userName+"\"}";
+        if(userService.register(userName,email,password,isAdmin)) {
+            User user = userRepository.findByUserName(userName);
+            return "{\"status\":" + 200 + ",\n\"admin\":" + false + ",\n\"userName\":\"" + userName + "\",\n\"userId\":"+user.getUserId()+"}";
+        }
         else
-            return "{\"status\":"+400+",\n\"admin\":"+false+",\n\"userName\":\""+userName+"\"}";
+            return "{\"status\":"+400+",\n\"admin\":"+false+",\n\"userName\":\""+userName+"\",\n\"userId\":"+-1+"}";
     }
 
     @RequestMapping(value = "/api/problem/submission",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
@@ -173,7 +175,7 @@ public class MyController {
 
         Map<String,Object> map1 = (Map<String, Object>) maps.get("code");
         Map<String,Object> map2 = (Map<String, Object>) maps.get("note");
-        Code code = new Code((boolean)map1.get("isAccepted")==true?1:0,(double)map1.get("performance"),(String)map1.get("code_language"),Timestamp.valueOf((String)map1.get("time_created")),
+        Code code = new Code(((boolean)map1.get("isAccepted"))==true?1:0,(double)map1.get("performance"),(String)map1.get("code_language"),Timestamp.valueOf((String)map1.get("time_created")),
                 (Timestamp.valueOf((String) map1.get("time_modified"))),(String)map1.get("content"));
         Note note = new Note((String)map2.get("content"),Timestamp.valueOf((String)map2.get("time_created")),
                 (Timestamp.valueOf((String) map2.get("time_modified"))),code);
@@ -284,7 +286,7 @@ public class MyController {
         List<ReturnType> list = new LinkedList<>();
         list.add(new ReturnType(userService.loginByEmail(email,password),user!=null?((user.getIsAdmin()==1)):false));
 //        return new ResponseEntity<Iterable<ReturnType>>(list, HttpStatus.OK);
-        return "{\"status\":"+userService.loginByEmail(email,password)+",\n\"admin\":"+(user!=null?((user.getIsAdmin()==1)):false)+",\n\"userName\":\""+user.getUserName()+"\"}";
+        return "{\"status\":"+userService.loginByEmail(email,password)+",\n\"admin\":"+(user!=null?((user.getIsAdmin()==1)):false)+",\n\"userName\":\""+user.getUserName()+"\",\n\"userId\":"+user.getUserId()+"}";
     }
 
     @RequestMapping("/api/problems")
