@@ -249,33 +249,37 @@ public class MyController {
     @CrossOrigin
     public ResponseEntity<Iterable<ProblemCode>> getOneProblem(@RequestBody Map<String,Object> maps){
 
-//        System.out.println(maps);
         int userId = (int)maps.get("user_id");
         int problemId = (int)maps.get("problem_id");
 
-//        System.out.println("user is "+userId);
-//        System.out.println("problem is "+problemId);
         User user = userService.findById(userId);
         ProblemCode pc = new ProblemCode();
 
+        Problem problem = problemRepository.findByProblemId(problemId);
+        pc.problemId = problem.getProblemId();
+        pc.description = problem.getDescription();
+        pc.difficulty = problem.getDifficulty();
+        pc.tag = problem.getTag();
+        pc.title = problem.getTitle();
+
+        for(Problem_Company pcom:problem.getPcomSet()){
+            System.out.println(pc.companyList.add(pcom.getCompany().getCompanyName()));
+            if(!pc.companyList.contains(pcom.getCompany().getCompanyName()))
+                pc.companyList.add(pcom.getCompany().getCompanyName());
+        }
+
         for(Problem_Code p:user.getPcSet()){
             if(p.getProblem().getId() == problemId){
-                pc.problemId = p.getProblem().getProblemId();
-                pc.description = p.getProblem().getDescription();
-                pc.difficulty = p.getProblem().getDifficulty();
-                pc.tag = p.getProblem().getTag();
-                pc.title = p.getProblem().getTitle();
                 for(Problem_Code code:p.getProblem().getPcodeSet()){
-                    System.out.println(1111111);
+//                    System.out.println(1111111);
                     if(!pc.codeList.contains(code.getCode()))
                         pc.codeList.add(code.getCode());
                 }
-                for(Problem_Company pcom:p.getProblem().getPcomSet()){
-                    if(!pc.companyList.contains(pcom.getCompany().getCompanyName()))
-                        pc.companyList.add(pcom.getCompany().getCompanyName());
-                }
+
             }
         }
+
+
         List<ProblemCode> list = new LinkedList<>();
         list.add(pc);
         return new ResponseEntity<Iterable<ProblemCode>>(list, HttpStatus.OK);
