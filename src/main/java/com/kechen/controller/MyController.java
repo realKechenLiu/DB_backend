@@ -1,10 +1,7 @@
 package com.kechen.controller;
 
 import com.kechen.domain.*;
-import com.kechen.repository.CodeRepository;
-import com.kechen.repository.NoteRepository;
-import com.kechen.repository.ProblemRepository;
-import com.kechen.repository.UserRepository;
+import com.kechen.repository.*;
 import com.kechen.service.ProblemService;
 import com.kechen.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +15,7 @@ import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 
 @RestController
@@ -28,6 +26,9 @@ public class MyController {
 
     @Autowired
     private ProblemRepository problemRepository;
+
+    @Autowired
+    private CompanyRepository companyRepository;
 
     @Autowired
     private CodeRepository codeRepository;
@@ -50,9 +51,9 @@ public class MyController {
         List<Integer> list = new LinkedList<>();
         for(Problem_Code pc:p.getPcodeSet()){
             System.out.println(111111);
-            for(Note note:pc.getCode().getNoteSet()) {
-                noteRepository.delete(note);
-            }
+
+            noteRepository.delete(pc.getCode().getNote());
+
             System.out.println(pc.getCode().getCodeId());
             list.add(new Integer(pc.getCode().getCodeId()));
             pc.setCode(null);
@@ -83,9 +84,7 @@ public class MyController {
         List<Integer> list = new LinkedList<>();
         for(Problem_Code pc:p.getPcodeSet()){
             System.out.println(111111);
-            for(Note note:pc.getCode().getNoteSet()) {
-                noteRepository.delete(note);
-            }
+            noteRepository.delete(pc.getCode().getNote());
             System.out.println(pc.getCode().getCodeId());
             list.add(new Integer(pc.getCode().getCodeId()));
             pc.setCode(null);
@@ -112,16 +111,32 @@ public class MyController {
 
     @RequestMapping(value = "/api/problem/insert",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
     @CrossOrigin
-    public int insertProblem(@RequestBody Map<String,Object> maps){
+    public String insertProblem(@RequestBody Map<String,Object> maps){
         int problemId = (int) maps.get("problemId");
         String description = (String) maps.get("description");
         String title = (String) maps.get("title");
         int difficulty = (int) maps.get("difficulty");
         String tag = (String) maps.get("tag");
+
+        String companyName = (String)maps.get("companyName");
+        Company company = companyRepository.findByCompanyName(companyName);
+        Problem problem;
+
         if(problemId == -1)
-            return problemService.Insert(new Problem(description,title,difficulty,tag))?200:400;
-        else
-            return problemService.Insert(new Problem(problemId,description,title,difficulty,tag))?200:400;
+            problem = new Problem(description,title,difficulty,tag);
+        else{
+            problem = problemRepository.findByProblemId(problemId);
+            problem.setDescription(description);
+            problem.setDifficulty(difficulty);
+            problem.setTag(tag);
+            problem.setTitle(title);
+        }
+        Problem_Company pc = new Problem_Company(problem,company);
+        Set<Problem_Company> set = problem.getPcomSet();
+        set.add(pc);
+        problem.setPcomSet(set);
+
+        return "{\n\"status\":"+(problemService.Insert(problem)?200:400)+"}";
     }
 
 //    @RequestMapping(value = "/api/user/signup/{userName}/{password}/{email}/{isAdmin}")
@@ -136,15 +151,15 @@ public class MyController {
 
     @RequestMapping(value = "/api/user/signup",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
     @CrossOrigin
-    public int signup(@RequestBody Map<String,Object> maps){
+    public String signup(@RequestBody Map<String,Object> maps){
         String userName = (String) maps.get("userName");
         String password = (String) maps.get("password");
         String email = (String) maps.get("email");
         int isAdmin = (int)maps.get("isAdmin");
         if(userService.register(userName,email,password,isAdmin))
-            return 200;
+            return "{\"status\":"+200+",\n\"admin\":"+false+",\n\"userName\":\""+userName+"\"}";
         else
-            return 400;
+            return "{\"status\":"+400+",\n\"admin\":"+false+",\n\"userName\":\""+userName+"\"}";
     }
 
     @RequestMapping(value = "/api/problem/submission",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
@@ -177,7 +192,22 @@ public class MyController {
                 return 200;
             }
         }
-        return 400;
+        Problem problem = problemRepository.findByProblemId(problemId);
+        problem.getPcodeSet().add(new Problem_Code(problem,code,user));
+        problemRepository.save(problem);
+
+        Problem_Code pc = new Problem_Code(problem,code,user);
+        Set<Problem_Code> set = user.getPcSet();
+        set.add(pc);
+        user.setPcSet(set);
+
+        User_Problem user_problem = new User_Problem(user,problem,code.getIsAccepted());
+        Set<User_Problem> set1 = user.getUpSet();
+        set1.add(user_problem);
+        user.setUpSet(set1);
+        userRepository.save(user);
+
+        return 200;
     }
 
     @RequestMapping(value = "/api/problem",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
@@ -185,8 +215,8 @@ public class MyController {
     public ResponseEntity<Iterable<ProblemCode>> getOneProblem(@RequestBody Map<String,Object> maps){
 
 //        System.out.println(maps);
-        int userId = Integer.parseInt((String)maps.get("user_id"));
-        int problemId = Integer.parseInt((String)maps.get("problem_id"));
+        int userId = (int)maps.get("user_id");
+        int problemId = (int)maps.get("problem_id");
 
 //        System.out.println("user is "+userId);
 //        System.out.println("problem is "+problemId);
@@ -201,6 +231,7 @@ public class MyController {
                 pc.tag = p.getProblem().getTag();
                 pc.title = p.getProblem().getTitle();
                 for(Problem_Code code:p.getProblem().getPcodeSet()){
+                    System.out.println(1111111);
                     pc.codeList.add(code.getCode());
                 }
                 for(Problem_Company pcom:p.getProblem().getPcomSet()){
@@ -251,7 +282,7 @@ public class MyController {
         List<ReturnType> list = new LinkedList<>();
         list.add(new ReturnType(userService.loginByEmail(email,password),user!=null?((user.getIsAdmin()==1)):false));
 //        return new ResponseEntity<Iterable<ReturnType>>(list, HttpStatus.OK);
-        return "{\"status\":"+userService.loginByEmail(email,password)+",\n\"admin\":"+(user!=null?((user.getIsAdmin()==1)):false)+"}";
+        return "{\"status\":"+userService.loginByEmail(email,password)+",\n\"admin\":"+(user!=null?((user.getIsAdmin()==1)):false)+",\n\"userName\":\""+user.getUserName()+"\"}";
     }
 
     @RequestMapping("/api/problems")

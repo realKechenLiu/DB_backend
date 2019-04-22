@@ -46,7 +46,7 @@ public class UserService {
     public int loginByEmail(String email, String password){
         if(userRepository.findByEmailAndPassword(email,password) != null)
             return 200;
-        else if(userRepository.findByUserName(email) != null)
+        else if(userRepository.findByEmail(email) != null)
             return 400;
         return 404;
     }
@@ -65,6 +65,7 @@ public class UserService {
 
      */
     public boolean register(String userName, String email, String password, int isAdmin){
+        if(userRepository.findByEmail(email)!=null||userRepository.findByUserName(userName)!=null) return false;
         return userRepository.save(new User(userName,password,email,isAdmin))!=null;
     }
 

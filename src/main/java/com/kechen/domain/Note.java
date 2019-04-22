@@ -1,5 +1,7 @@
 package com.kechen.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -21,7 +23,8 @@ public class Note {
     @Column(name = "time_modified")
     private Timestamp modifyTime;
 
-    @ManyToOne
+    @OneToOne(cascade =  CascadeType.ALL)
+    @JsonIgnore
     @JoinColumn(name = "code_id")
     private Code code;
 

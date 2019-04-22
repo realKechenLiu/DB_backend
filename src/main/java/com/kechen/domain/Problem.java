@@ -15,6 +15,7 @@ public class Problem {
     private int problemId;
 
 
+    @Column(name = "description",length = 62355)
     private String description;
     private String title;
     private int difficulty;

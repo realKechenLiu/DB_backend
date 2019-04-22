@@ -38,9 +38,9 @@ public class Code {
     @OneToMany(mappedBy = "code",cascade = CascadeType.ALL,fetch=FetchType.LAZY)
     private Set<Problem_Code> pcCode;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "code",cascade =  CascadeType.ALL,fetch=FetchType.LAZY)
-    private Set<Note> noteSet;
+    @OneToOne(mappedBy = "code")
+    @JoinColumn(name = "id")
+    private Note note;
 
     public Code() {
     }
@@ -53,7 +53,6 @@ public class Code {
         this.modeifyTime = modeifyTime;
         this.content = content;
         pcCode = new HashSet<>();
-        noteSet = new HashSet<>();
     }
 
     public int getCodeId() {
@@ -120,12 +119,12 @@ public class Code {
         this.pcCode = pcCode;
     }
 
-    public Set<Note> getNoteSet() {
-        return noteSet;
+    public Note getNote() {
+        return note;
     }
 
-    public void setNoteSet(Set<Note> noteSet) {
-        this.noteSet = noteSet;
+    public void setNote(Note note) {
+        this.note = note;
     }
 }
 

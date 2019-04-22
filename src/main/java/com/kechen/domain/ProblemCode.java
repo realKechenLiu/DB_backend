@@ -1,5 +1,7 @@
 package com.kechen.domain;
 
+import javax.persistence.Column;
+import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,3 +21,5 @@ public class ProblemCode {
         codeList = new LinkedList<>();
     }
 }
+
+
