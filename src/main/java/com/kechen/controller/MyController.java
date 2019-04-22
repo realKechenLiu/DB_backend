@@ -232,10 +232,12 @@ public class MyController {
                 pc.title = p.getProblem().getTitle();
                 for(Problem_Code code:p.getProblem().getPcodeSet()){
                     System.out.println(1111111);
-                    pc.codeList.add(code.getCode());
+                    if(!pc.codeList.contains(code.getCode()))
+                        pc.codeList.add(code.getCode());
                 }
                 for(Problem_Company pcom:p.getProblem().getPcomSet()){
-                    pc.companyList.add(pcom.getCompany().getCompanyName());
+                    if(!pc.companyList.contains(pcom.getCompany().getCompanyName()))
+                        pc.companyList.add(pcom.getCompany().getCompanyName());
                 }
             }
         }

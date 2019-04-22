@@ -14,7 +14,7 @@ public class Note {
     @Column(name = "note_id")
     private int noteId;
 
-    @Column(name = "content")
+    @Column(name = "content",length = 62355)
     private String content;
 
     @Column(name = "time_created")

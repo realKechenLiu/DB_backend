@@ -31,7 +31,7 @@ public class Code {
     @Column(name = "time_modified")
     private Timestamp modeifyTime;
 
-    @Column(name = "content")
+    @Column(name = "content",length = 62355)
     private String content;
 
     @JsonIgnore

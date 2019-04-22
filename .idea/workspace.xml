@@ -2,36 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c7f3d5b-3553-43b2-97e3-9ed5e7cd19ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.3.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.3.1/fileContent/fileContent.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/controller/MyController.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kechen/controller/MyController.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/controller/ReturnType.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kechen/controller/ReturnType.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Code.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Code.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Note.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Note.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Problem.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Problem.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/ProblemCode.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/ProblemCode.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/service/UserService.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kechen/service/UserService.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/1.0-0.0.1-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/build/libs/1.0-0.0.1-SNAPSHOT.jar" />
-      <change beforePath="$PROJECT_DIR$/build/libs/1.0-0.0.1-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/build/libs/1.0-0.0.1-SNAPSHOT.jar.original" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kechen/controller/MyController.class" afterPath="$PROJECT_DIR$/out/production/classes/com/kechen/controller/MyController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kechen/controller/ReturnType.class" afterPath="$PROJECT_DIR$/out/production/classes/com/kechen/controller/ReturnType.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/Code.class" afterPath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/Code.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/Note.class" afterPath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/Note.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/Problem.class" afterPath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/Problem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/ProblemCode.class" afterPath="$PROJECT_DIR$/out/production/classes/com/kechen/domain/ProblemCode.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/kechen/service/UserService.class" afterPath="$PROJECT_DIR$/out/production/classes/com/kechen/service/UserService.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Problem.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Problem.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/domain/ProblemCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/domain/ProblemCode.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/service/UserService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -53,8 +26,8 @@
       <file leaf-file-name="MyController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1281">
-              <caret line="129" column="46" lean-forward="false" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
+            <state relative-caret-position="208">
+              <caret line="238" column="84" lean-forward="true" selection-start-line="238" selection-start-column="84" selection-end-line="238" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,7 +38,7 @@
       <file leaf-file-name="ProblemService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/service/ProblemService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
+            <state relative-caret-position="525">
               <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
               <folding>
                 <element signature="e#1397#1398#0" expanded="true" />
@@ -88,7 +61,7 @@
       <file leaf-file-name="Company.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Company.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="240">
               <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
               <folding />
             </state>
@@ -115,27 +88,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoteRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/repository/NoteRepository.java">
+      <file leaf-file-name="Note.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="311">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#1560#1561#0" expanded="true" />
+                <element signature="e#1587#1588#0" expanded="true" />
+                <element signature="e#1625#1626#0" expanded="true" />
+                <element signature="e#1657#1658#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Note.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java">
+      <file leaf-file-name="Problem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Problem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="15" />
-              <folding>
-                <element signature="e#1545#1546#0" expanded="true" />
-                <element signature="e#1572#1573#0" expanded="true" />
-                <element signature="e#1610#1611#0" expanded="true" />
-                <element signature="e#1642#1643#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="112">
+              <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,13 +116,13 @@
       <file leaf-file-name="Code.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="312">
+              <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
               <folding>
-                <element signature="e#2761#2762#0" expanded="true" />
-                <element signature="e#2788#2789#0" expanded="true" />
-                <element signature="e#2826#2827#0" expanded="true" />
-                <element signature="e#2858#2859#0" expanded="true" />
+                <element signature="e#2776#2777#0" expanded="true" />
+                <element signature="e#2803#2804#0" expanded="true" />
+                <element signature="e#2841#2842#0" expanded="true" />
+                <element signature="e#2873#2874#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,6 +152,7 @@
     <findStrings>
       <find>put</find>
       <find>signup</find>
+      <find>delete</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -535,11 +509,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kechen/domain/ReturnCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kechen/domain/ProblemCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kechen/repository/NoteRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kechen/domain/Problem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kechen/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java" />
       </list>
     </option>
@@ -608,8 +582,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -709,7 +684,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -884,11 +858,12 @@
       <workItem from="1555804798387" duration="7212000" />
       <workItem from="1555865783229" duration="5897000" />
       <workItem from="1555893402068" duration="3940000" />
+      <workItem from="1555906290454" duration="596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49318000" />
+    <option name="totallyTimeSpent" value="49914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="735" extended-state="0" />
@@ -910,11 +885,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38573745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38573745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28594506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2907916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -970,9 +945,6 @@
           <folding>
             <element signature="e#1397#1398#0" expanded="true" />
             <element signature="e#1457#1458#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="false" />
-            <element signature="e#1556#1557#0" expanded="false" />
-            <element signature="e#1644#1645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1330,40 +1302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="15" />
-          <folding>
-            <element signature="e#1545#1546#0" expanded="true" />
-            <element signature="e#1572#1573#0" expanded="true" />
-            <element signature="e#1610#1611#0" expanded="true" />
-            <element signature="e#1642#1643#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#2761#2762#0" expanded="true" />
-            <element signature="e#2788#2789#0" expanded="true" />
-            <element signature="e#2826#2827#0" expanded="true" />
-            <element signature="e#2858#2859#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/ProblemCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1407,17 +1345,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Company.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="240">
           <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding />
         </state>
@@ -1433,7 +1363,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/service/ProblemService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
+        <state relative-caret-position="525">
           <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
           <folding>
             <element signature="e#1397#1398#0" expanded="true" />
@@ -1442,10 +1372,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="e#2776#2777#0" expanded="true" />
+            <element signature="e#2803#2804#0" expanded="true" />
+            <element signature="e#2841#2842#0" expanded="true" />
+            <element signature="e#2873#2874#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Note.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1587#1588#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="129" column="46" lean-forward="false" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
+        <state relative-caret-position="208">
+          <caret line="238" column="84" lean-forward="true" selection-start-line="238" selection-start-column="84" selection-end-line="238" selection-end-column="84" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
