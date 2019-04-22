@@ -2,8 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c7f3d5b-3553-43b2-97e3-9ed5e7cd19ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java" afterPath="$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/IdClasses/PCodeID.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/IdClasses/PComId.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/IdClasses/UPId.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/MainApplication.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/controller/MyController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/controller/ReturnType.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Code.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Company.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Note.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Problem.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/ProblemCode.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Problem_Code.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/Problem_Company.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/User.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/domain/User_Problem.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/repository/CodeRepository.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/repository/CompanyRepository.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/repository/NoteRepository.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/repository/ProblemRepository.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/repository/UserRepository.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/service/ProblemService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kechen/service/UserService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/libs/1.0-0.0.1-SNAPSHOT.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/libs/1.0-0.0.1-SNAPSHOT.jar.original" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -22,10 +47,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="536">
               <caret line="196" column="19" lean-forward="false" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -106,7 +131,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -848,12 +873,12 @@
       <workItem from="1555804798387" duration="7212000" />
       <workItem from="1555865783229" duration="5897000" />
       <workItem from="1555893402068" duration="3940000" />
-      <workItem from="1555906290454" duration="4344000" />
+      <workItem from="1555906290454" duration="5112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53662000" />
+    <option name="totallyTimeSpent" value="54430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="735" extended-state="0" />
@@ -923,8 +948,8 @@
         <state relative-caret-position="600">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <element signature="e#1397#1398#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1397#1398#0" expanded="false" />
+            <element signature="e#1457#1458#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1365,14 +1390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/domain/Code.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1391,8 +1408,8 @@
         <state relative-caret-position="230">
           <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
           <folding>
-            <element signature="e#1397#1398#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1397#1398#0" expanded="false" />
+            <element signature="e#1457#1458#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1407,11 +1424,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kechen/controller/MyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="536">
           <caret line="196" column="19" lean-forward="false" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
