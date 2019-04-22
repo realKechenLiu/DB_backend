@@ -164,7 +164,40 @@ public class MyController {
             return "{\"status\":"+400+",\n\"admin\":"+false+",\n\"userName\":\""+userName+"\",\n\"userId\":"+-1+"}";
     }
 
-    @RequestMapping(value = "/api/problem/submission",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
+
+    @RequestMapping(value = "/api/problem/update",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
+    @CrossOrigin
+    public int updateCode(@RequestBody Map<String,Object> maps) {
+        int userId = (int) maps.get("user_id");
+        int problemId = (int) maps.get("problem_id");
+
+//        Code code = (Code)(maps.get("code"));
+//        Note note = (Note)maps.get("note");
+
+        Map<String, Object> map1 = (Map<String, Object>) maps.get("code");
+        Map<String, Object> map2 = (Map<String, Object>) maps.get("note");
+
+        Code code = codeRepository.findByCodeId((int)map1.get("code_id"));
+        code.setIsAccepted(((boolean) map1.get("isAccepted")) == true ? 1 : 0);
+        code.setCodeLanguage((String) map1.get("code_language"));
+        code.setPerformance((double) map1.get("performance"));
+        code.setContent((String) map1.get("content"));
+        code.setCreateTime(Timestamp.valueOf((String) map1.get("time_created")));
+        code.setCreateTime(Timestamp.valueOf((String) map1.get("time_modified")));
+
+        Note note = code.getNote();
+        note.setContent((String) map2.get("content"));
+        note.setCreateTime(Timestamp.valueOf((String) map2.get("time_created")));
+        note.setModifyTime(Timestamp.valueOf((String) map2.get("time_modified")));
+
+        code.setNote(note);
+
+        codeRepository.save(code);
+        noteRepository.save(note);
+        return 200;
+    }
+
+        @RequestMapping(value = "/api/problem/submission",method = RequestMethod.POST,consumes="application/json;charset=UTF-8")
     @CrossOrigin
     public int update(@RequestBody Map<String,Object> maps){
         int userId = (int)maps.get("user_id");

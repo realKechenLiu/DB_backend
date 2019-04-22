@@ -55,6 +55,17 @@ public class Code {
         pcCode = new HashSet<>();
     }
 
+    public Code(int codeId, int isAccepted, double performance, String codeLanguage, Timestamp createTime, Timestamp modeifyTime, String content) {
+        this.codeId = codeId;
+        this.isAccepted = isAccepted;
+        this.performance = performance;
+        this.codeLanguage = codeLanguage;
+        this.createTime = createTime;
+        this.modeifyTime = modeifyTime;
+        this.content = content;
+        pcCode = new HashSet<>();
+    }
+
     public int getCodeId() {
         return codeId;
     }
